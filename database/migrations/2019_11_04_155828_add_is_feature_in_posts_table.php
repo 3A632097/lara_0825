@@ -17,6 +17,7 @@ class AddIsFeatureInPostsTable extends Migration
             //
             $table->string('title', 500)->change();
             $table->boolean('is_feature')->default(false)->after('content');
+
         });
     }
 

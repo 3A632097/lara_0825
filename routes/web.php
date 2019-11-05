@@ -13,10 +13,15 @@
 
 Route::get('/', function () {
 //    return view('welcome');
-    \App\Post::create([
-        'title'=>'test title',
-        'content'=>'test content',
-    ]);
+//    \App\Post::create([
+//        'title'=>'test title',
+//        'content'=>'test content',
+//    ]);
+
+    $post=new\App\Post();
+    $post->title='testtitle';
+    $post->content='testcontent';
+    $post->save();
 
 });
 Route::get('posts', ['as' => 'posts.index', 'uses' =>'PostsController@index']);

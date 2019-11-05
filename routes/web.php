@@ -34,11 +34,18 @@ Route::get('/', function () {
 //    dd($posts);
     //更新資料
     //使用 update方法
+//    $post=\App\Post::find(1);
+//    $post->update([
+//        'title'=>'updated title',
+//        'content'=>'updated content',
+//    ]);
+    //換用 save方法
     $post=\App\Post::find(1);
-    $post->update([
-        'title'=>'updated title',
-        'content'=>'updated content',
-    ]);
+    $post->title='savedtitle';
+    $post->content='savedcontent';
+    $post->save();
+
+
 });
 Route::get('posts', ['as' => 'posts.index', 'uses' =>'PostsController@index']);
 Route::get('post', ['as' => 'posts.show', 'uses' => 'PostsController@show']);

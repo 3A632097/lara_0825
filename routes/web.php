@@ -23,8 +23,11 @@ Route::get('/', function () {
 //    $post->content='testcontent';
 //    $post->save();
 
-    $posts=\App\Post::all();
-    dd($posts);
+//    $posts=\App\Post::all();
+//    dd($posts);
+
+    $post=\App\Post::find(1);
+    dd($post);
 });
 Route::get('posts', ['as' => 'posts.index', 'uses' =>'PostsController@index']);
 Route::get('post', ['as' => 'posts.show', 'uses' => 'PostsController@show']);

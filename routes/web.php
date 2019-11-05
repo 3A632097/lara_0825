@@ -46,8 +46,10 @@ Route::get('/', function () {
 //    $post->save();
     //刪除資料
     //使用 delete方法
-    $post=\App\Post::find(1);
-    $post->delete();
+//    $post=\App\Post::find(1);
+//    $post->delete();
+    //使用 destroy方法
+    \App\Post::destroy(2);
 
 
 

@@ -18,11 +18,13 @@ Route::get('/', function () {
 //        'content'=>'test content',
 //    ]);
 
-    $post=new\App\Post();
-    $post->title='testtitle';
-    $post->content='testcontent';
-    $post->save();
+//    $post=new\App\Post();
+//    $post->title='testtitle';
+//    $post->content='testcontent';
+//    $post->save();
 
+    $posts=\App\Post::all();
+    dd($posts);
 });
 Route::get('posts', ['as' => 'posts.index', 'uses' =>'PostsController@index']);
 Route::get('post', ['as' => 'posts.show', 'uses' => 'PostsController@show']);

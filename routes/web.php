@@ -58,17 +58,22 @@ Route::get('/', function () {
 //    $featuredPosts=\App\Post::where('is_feature',1)->get();
 //    dd($featuredPosts);
     //取得 Model
-    $fourthPost=\App\Post::find(4);
-    dd($fourthPost);
-    $lastPost=\App\Post::orderBy('id','DESC')->first();
-    dd($lastPost);
+//    $fourthPost=\App\Post::find(4);
+//    dd($fourthPost);
+//    $lastPost=\App\Post::orderBy('id','DESC')->first();
+//    dd($lastPost);
 
     //練習7-1 b, d, f
-    $comment = new\App\Comment();
-    $comment->content = 'test content2';
-    $comment->post_id = '8';
-    $comment->save();
+//    $comment = new\App\Comment();
+//    $comment->content = 'test content2';
+//    $comment->post_id = '8';
+//    $comment->save();
 
+    //練習7-4
+    $post=\App\Post::find(2);
+    foreach($post->comments as $comment){
+        echo $comment->content.'<br>';
+    }
 
 });
 Route::get('posts', ['as' => 'posts.index', 'uses' =>'PostsController@index']);
